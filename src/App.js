@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <p>Red Social</p>
+      <p>Walk Chile</p>
       <InitFirebase />
     </div>
   );

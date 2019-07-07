@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import FileUpload from './FileUpload';
+import Button from './Button';
 
 
 class InitFirebase extends Component {
@@ -78,9 +79,8 @@ class InitFirebase extends Component {
                 <div>
                     <img width="100" src={this.state.user.photoURL} alt="{this.state.user.displayName}" />
                     <p>Hola {this.state.user.displayName}!</p>
-                    <button onClick={this.handleLogout}>Salir</button>
-
-                    < FileUpload onUpload={this.handleUpload} uploadValue={this.state.uploadValue} />
+                    <Button btnName = "Desconectar" buttonOnclick= {this.handleLogout} />
+                    < FileUpload onUpload={this.handleUpload}  />
 
                     {this.state.pictures.map(picture => (
                         <div className="returnImages">
@@ -99,7 +99,7 @@ class InitFirebase extends Component {
         } else {
             return (
                 //si el usuario no está logueado
-                <button onClick={this.handleAuth}>Login con Google</button>
+                <Button btnName = "Login con Google" buttonOnclick= {this.handleAuth} />
             )
         }
     }
